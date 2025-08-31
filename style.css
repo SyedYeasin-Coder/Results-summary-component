@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+:root{
+    --fP: clamp(0.8rem, 0.8rem + 1vw, 1.2rem);
+    --fH1: clamp(0.8rem, 1rem + 1vw, 1.25rem);
+    --fH2: clamp(3rem, 2.5rem + 1vw, 3.5rem);
+    --fH3: clamp(1.5rem, 0.8rem + 1vw, 1.8rem);
+}
+body{
+    background-color: hsl(221, 100%, 96%);
+    height: 100vh;
+    font-size: 18px;
+    margin: 0 1rem;
+}
+
+.whole-container{
+    font-family: "Hanken Grotesk", sans-serif;
+    height: 95%;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--fP);
+    gap: 0;
+    /* margin: 0 1rem; */
+}
+.left-card{
+    max-width: calc(20rem + 1vw);
+    height: 431px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: linear-gradient(45deg, hsl(241, 81%, 54%),hsl(252, 100%, 67%));
+    border-radius: 2rem;
+    padding: 2rem;
+    text-align: center;
+    color: hsl(221, 100%, 96%);
+    gap: 1rem;
+    z-index: 1;
+}
+.right-card{
+    max-width: calc(25rem + 1vw);
+    flex-grow: 1;
+    flex-basis: calc(20rem + 1vw);
+    height: 431px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    text-align: left;
+    background-color: white;
+    border-radius: 2rem;
+    margin-left: -3rem; 
+    z-index: 0;
+    padding: 2rem;
+    padding-left: 5rem;
+}
+.left-card > h1, .left-card p{
+    color: hsl(241, 100%, 89%);
+}
+.left-card > h1{
+    font-weight: 700;
+}
+h1{
+    font-size: var(--fH1);
+}
+.left-card > h3{
+    font-size: var(--fH3);
+}
+.circle{
+    background-image: linear-gradient(360deg,hsla(241, 72%, 46%, 0), hsla(256, 72%, 46%, 1));
+    border-radius: 50%;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.circle > h2{
+    font-size: var(--fH2);
+    line-height: 1;
+}
+.circle > p{
+    font-size: calc(var(--fP) - 0.2vw);
+    font-weight: 500;
+    color: hsla(241, 100%, 89%, 0.555);
+}
+.continue{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 4rem;
+    border-radius: 4rem;
+    color: hsl(221, 100%, 96%);
+    background-color: hsl(224, 30%, 27%);
+    position: relative;
+    z-index: 0;
+}
+.continue::after{
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 4rem;
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(45deg, hsl(241, 81%, 54%),hsl(252, 100%, 67%));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+}
+.continue-container:hover .continue::after, .continue-container:active .continue::after{
+    cursor: pointer;
+    opacity: 1;
+}
+.content-container-right{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.value-container{
+    display: flex;
+    flex:1 1 206px;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+.total-value{
+    color: hsl(241, 100%, 89%);
+}
+.value-container span{color: black;}
+.Reaction, .Reaction.attribute{
+    color: hsl(0, 100%, 67%);
+    background-color: hsla(0, 100%, 67%, 0.1);
+    border-radius: 10px;
+}
+.Memory, .Memory.attribute{
+    color: hsl(39, 100%, 56%);
+    background-color: hsla(39, 100%, 56%, 0.1);
+    border-radius: 10px;
+}
+.Verbal, .Verbal.attribute{
+    color: hsl(166, 100%, 37%);
+    background-color: hsla(166, 100%, 37%, 0.1);
+    border-radius: 10px;
+}
+.Visual, .Visual.attribute{
+    color: hsl(234, 85%, 45%);
+    background-color: hsla(234, 85%, 45%, 0.1);
+    border-radius: 10px;
+}
+.section{
+    padding: 0.25rem 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.section-container{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.icon img{
+    width: 2rem;
+}
+@media (max-width:670px){
+    body{
+        margin: 0;
+    }
+    .whole-container{
+        flex-flow: column;
+    }
+    .left-card{
+        max-width: 100%;
+        border-radius: 0 0 2rem 2rem;
+        height: max-content;
+    }
+    .right-card{
+        min-width: 100%;
+        border-radius: 0;
+        flex-basis: auto;
+        margin-top: -3rem;
+        margin-left: 0;
+        padding: 2rem;
+        padding-top: 5rem;
+    }
+}
