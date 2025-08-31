@@ -13,7 +13,7 @@ fetch('./data.json')
             <div class="section ${post.category}">
             <div class="icon"><img src="${post.icon}" alt=""></div>
             <div class="value-container">
-              <p class="attribute">${post.category}</p> <span><b>${post.score}</b><span class="total-value">/ 100</span></span>
+              <p class="attribute">${post.category}</p> <span><b>${post.score}</b><span class="total-value"> / 100</span></span>
             </div>
           </div>
         ` ;
